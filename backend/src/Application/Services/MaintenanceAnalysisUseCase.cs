@@ -77,6 +77,7 @@ public class MaintenanceAnalysisUseCase : IMaintenanceAnalysisUseCase
             vehicle.Id,
             vehicle.Brand,
             vehicle.Model,
+            vehicle.Year,
             vehicle.CurrentMileage,
             sortedRecommendations,
             DateTime.UtcNow

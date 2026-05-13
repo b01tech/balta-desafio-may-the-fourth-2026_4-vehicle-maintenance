@@ -9,6 +9,7 @@ public record MaintenanceAnalysisResponseDto(
     Guid VehicleId,
     string Brand,
     string Model,
+    int Year,
     int CurrentMileage,
     List<MaintenanceRecommendationDto> Recommendations,
     DateTime AnalyzedAt
