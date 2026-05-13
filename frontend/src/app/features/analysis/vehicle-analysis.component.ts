@@ -99,134 +99,200 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
   styles: [
     `
       .container {
-        padding: 24px;
+        padding: 32px;
         max-width: 900px;
         margin: 0 auto;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
       }
       .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 24px;
+        margin-bottom: 32px;
       }
-      h1 {
+      .header h1 {
         margin: 0;
+        color: white;
+        font-size: 28px;
+        font-weight: 600;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
       }
       .btn {
-        padding: 10px 20px;
-        border-radius: 4px;
+        padding: 12px 24px;
+        border-radius: 8px;
         text-decoration: none;
         font-size: 14px;
         cursor: pointer;
         border: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       }
       .btn-secondary {
-        background: #757575;
-        color: white;
+        background: white;
+        color: #667eea;
+      }
+      .btn-secondary:hover {
+        transform: translateY(-2px);
       }
       .loading {
         text-align: center;
-        padding: 48px;
-        color: #666;
+        padding: 64px;
+        color: white;
+        font-size: 18px;
+        background: rgba(255,255,255,0.15);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
       }
       .vehicle-info {
-        background: #f5f5f5;
-        padding: 20px;
-        border-radius: 8px;
+        background: rgba(255,255,255,0.98);
+        padding: 24px;
+        border-radius: 16px;
         margin-bottom: 24px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
       }
       .vehicle-info h2 {
-        margin: 0 0 8px;
+        margin: 0 0 12px;
+        color: #333;
+        font-size: 24px;
       }
       .vehicle-info p {
-        margin: 4px 0;
+        margin: 8px 0;
         color: #666;
+        font-size: 15px;
       }
       .no-recommendations {
         text-align: center;
-        padding: 32px;
-        background: #e8f5e9;
-        border-radius: 8px;
-        color: #2e7d32;
+        padding: 40px;
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        border-radius: 16px;
+        color: white;
+        font-size: 16px;
+        box-shadow: 0 8px 32px rgba(56, 239, 125, 0.3);
+      }
+      .recommendations h3 {
+        color: white;
+        font-size: 22px;
+        margin-bottom: 16px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
       }
       .recommendations {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 20px;
       }
       .recommendation-card {
         background: white;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 20px;
+        border: none;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      .recommendation-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
       }
       .rec-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #f0f0f0;
       }
       .rec-header h4 {
         margin: 0;
-      }
-      .urgency-badge {
-        padding: 4px 12px;
-        border-radius: 12px;
-        font-size: 12px;
+        color: #333;
+        font-size: 18px;
         font-weight: 600;
       }
+      .urgency-badge {
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
       .badge-critical {
-        background: #ffcdd2;
-        color: #c62828;
+        background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+        color: white;
       }
       .badge-high {
-        background: #ffe0b2;
-        color: #ef6c00;
+        background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);
+        color: white;
       }
       .badge-medium {
-        background: #fff9c4;
-        color: #f9a825;
+        background: linear-gradient(135deg, #f2c94c 0%, #f2994a 100%);
+        color: white;
       }
       .badge-low {
-        background: #c8e6c9;
-        color: #2e7d32;
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        color: white;
       }
       .rec-details {
-        margin-bottom: 16px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 24px;
       }
       .rec-details p {
-        margin: 4px 0;
+        margin: 0;
         font-size: 14px;
+        color: #666;
+      }
+      .rec-details strong {
+        color: #333;
       }
       .parts-section h5 {
-        margin: 0 0 8px;
-        font-size: 14px;
+        margin: 0 0 12px;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
       }
       .parts-table {
         width: 100%;
-        font-size: 13px;
+        font-size: 14px;
         border-collapse: collapse;
+        background: #fafafa;
+        border-radius: 8px;
+        overflow: hidden;
       }
       .parts-table th,
       .parts-table td {
-        padding: 8px;
+        padding: 12px 16px;
         text-align: left;
         border-bottom: 1px solid #eee;
       }
+      .parts-table th {
+        background: #f5f5f5;
+        font-weight: 600;
+        color: #333;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
       .parts-table tfoot td {
-        border-top: 2px solid #333;
+        border-top: 2px solid #667eea;
+        background: #f0f4ff;
+        font-weight: 600;
+        color: #667eea;
       }
       .total-summary {
         margin-top: 24px;
-        padding: 20px;
-        background: #e3f2fd;
-        border-radius: 8px;
+        padding: 24px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 16px;
+        color: white;
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
       }
       .total-summary h3 {
-        margin: 0 0 8px;
+        margin: 0 0 12px;
+        font-size: 20px;
       }
       .total-summary .total {
-        font-size: 18px;
+        font-size: 24px;
+        font-weight: 700;
       }
     `,
   ],

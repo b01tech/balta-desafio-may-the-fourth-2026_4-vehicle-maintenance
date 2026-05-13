@@ -72,23 +72,153 @@ import { CreateVehicle } from '../../core/models/vehicle.model';
     </div>
   `,
   styles: [`
-    .container { padding: 24px; max-width: 600px; margin: 0 auto; }
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-    h1 { margin: 0; }
-    .btn { padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 14px; cursor: pointer; border: none; }
-    .btn-secondary { background: #757575; color: white; }
-    .btn-primary { background: #1976d2; color: white; }
-    .btn-primary:disabled { background: #b0b0b0; }
-    .form { display: flex; flex-direction: column; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group label { font-weight: 500; }
-    .form-group input { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
-    .error { color: #d32f2f; font-size: 12px; }
-    .form-actions { margin-top: 16px; }
-    .upload-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e0e0e0; }
-    .upload-section h3 { margin-top: 0; }
-    .format { font-size: 12px; color: #666; }
-    .success { color: #2e7d32; margin-left: 8px; }
+    .container { 
+      padding: 32px; 
+      max-width: 600px; 
+      margin: 0 auto;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-bottom: 32px;
+    }
+    .header h1 {
+      margin: 0; 
+      color: white;
+      font-size: 28px;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .btn { 
+      padding: 12px 24px; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      font-size: 14px; 
+      cursor: pointer; 
+      border: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary { 
+      background: white; 
+      color: #667eea;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .btn-primary { 
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); 
+      color: white;
+      box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4);
+    }
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 239, 125, 0.5);
+    }
+    .btn-primary:disabled { 
+      background: #b0b0b0; 
+      box-shadow: none;
+    }
+    .form { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 20px;
+      background: rgba(255,255,255,0.98);
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .form-group { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 8px; 
+    }
+    .form-group label { 
+      font-weight: 600; 
+      color: #333;
+      font-size: 14px;
+    }
+    .form-group input { 
+      padding: 14px 16px; 
+      border: 2px solid #e0e0e0; 
+      border-radius: 8px; 
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background: #fafafa;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    .form-group input::placeholder {
+      color: #aaa;
+    }
+    .error { 
+      color: #eb3349; 
+      font-size: 13px; 
+      font-weight: 500;
+    }
+    .form-actions { 
+      margin-top: 8px; 
+      display: flex;
+      gap: 12px;
+    }
+    .form-actions button {
+      flex: 1;
+    }
+    .upload-section { 
+      margin-top: 32px; 
+      padding: 24px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .upload-section h3 { 
+      margin: 0 0 12px;
+      color: #333;
+      font-size: 20px;
+    }
+    .upload-section p { 
+      color: #666;
+      font-size: 14px;
+      margin: 0 0 8px;
+    }
+    .format { 
+      font-size: 13px; 
+      color: #888; 
+      font-family: monospace;
+      background: #f5f5f5;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .upload-section input[type="file"] {
+      margin-top: 16px;
+      padding: 12px;
+      border: 2px dashed #667eea;
+      border-radius: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      cursor: pointer;
+      background: #f8f9ff;
+    }
+    .success { 
+      color: #11998e; 
+      margin-left: 12px;
+      font-weight: 500;
+      display: inline-block;
+      padding: 8px 16px;
+      background: #e8f8f5;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
   `]
 })
 export class VehicleFormComponent implements OnInit {

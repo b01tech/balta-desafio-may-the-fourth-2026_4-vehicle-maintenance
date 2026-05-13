@@ -57,21 +57,109 @@ import { Vehicle } from '../../core/models/vehicle.model';
     </div>
   `,
   styles: [`
-    .container { padding: 24px; }
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-    h1 { margin: 0; font-size: 24px; }
-    .btn { padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 14px; cursor: pointer; border: none; }
-    .btn-primary { background: #1976d2; color: white; }
-    .btn-secondary { background: #757575; color: white; }
-    .btn-small { padding: 6px 12px; font-size: 12px; margin-right: 8px; }
-    .btn-info { background: #0288d1; color: white; }
-    .btn-danger { background: #d32f2f; color: white; }
-    .loading, .empty { text-align: center; padding: 48px; color: #666; }
-    .table-container { overflow-x: auto; }
-    .vehicle-table { width: 100%; border-collapse: collapse; }
-    .vehicle-table th, .vehicle-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-    .vehicle-table th { background: #f5f5f5; font-weight: 600; }
-    .actions { display: flex; gap: 4px; }
+    .container { 
+      padding: 32px; 
+      max-width: 1000px; 
+      margin: 0 auto;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-bottom: 32px;
+    }
+    .header h1 {
+      margin: 0; 
+      font-size: 28px; 
+      color: white;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .btn { 
+      padding: 12px 24px; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      font-size: 14px; 
+      cursor: pointer; 
+      border: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .btn-primary { 
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); 
+      color: white; 
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(56, 239, 125, 0.4);
+    }
+    .btn-secondary { 
+      background: white; 
+      color: #667eea;
+    }
+    .btn-small { 
+      padding: 8px 14px; 
+      font-size: 13px; 
+      margin-right: 8px; 
+    }
+    .btn-info { 
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
+      color: white; 
+    }
+    .btn-danger { 
+      background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); 
+      color: white; 
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .loading, .empty { 
+      text-align: center; 
+      padding: 64px; 
+      color: white;
+      background: rgba(255,255,255,0.15);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+    .table-container { 
+      overflow-x: auto; 
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      padding: 8px;
+    }
+    .vehicle-table { 
+      width: 100%; 
+      border-collapse: collapse; 
+    }
+    .vehicle-table th, .vehicle-table td { 
+      padding: 16px; 
+      text-align: left; 
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .vehicle-table th { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    .vehicle-table tr:hover {
+      background: #f8f9ff;
+    }
+    .vehicle-table td {
+      color: #333;
+      font-size: 14px;
+    }
+    .actions { display: flex; gap: 6px; }
+    .empty p {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
   `]
 })
 export class VehicleListComponent implements OnInit {
