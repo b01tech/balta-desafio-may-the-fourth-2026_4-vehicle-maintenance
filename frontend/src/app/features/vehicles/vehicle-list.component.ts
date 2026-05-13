@@ -1,13 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { VehicleApiService } from '../../core/services/vehicle-api.service';
 import { Vehicle } from '../../core/models/vehicle.model';
 
 @Component({
   selector: 'app-vehicle-list',
   standalone: true,
-  imports: [RouterLink, DatePipe],
+  imports: [RouterLink, DatePipe, DecimalPipe],
   template: `
     <div class="container">
       <div class="header">

@@ -43,6 +43,7 @@ export interface MaintenanceAnalysis {
   vehicleId: string;
   brand: string;
   model: string;
+  year: number;
   currentMileage: number;
   recommendations: MaintenanceRecommendation[];
   analyzedAt: string;
