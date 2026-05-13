@@ -104,6 +104,7 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
         margin: 0 auto;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         min-height: 100vh;
+        border-radius: 16px;
       }
       .header {
         display: flex;
@@ -116,7 +117,7 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
         color: white;
         font-size: 28px;
         font-weight: 600;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
       .btn {
         padding: 12px 24px;
@@ -127,7 +128,7 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
         border: none;
         font-weight: 500;
         transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
       .btn-secondary {
         background: white;
@@ -141,16 +142,16 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
         padding: 64px;
         color: white;
         font-size: 18px;
-        background: rgba(255,255,255,0.15);
+        background: rgba(255, 255, 255, 0.15);
         border-radius: 16px;
         backdrop-filter: blur(10px);
       }
       .vehicle-info {
-        background: rgba(255,255,255,0.98);
+        background: rgba(255, 255, 255, 0.98);
         padding: 24px;
         border-radius: 16px;
         margin-bottom: 24px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       }
       .vehicle-info h2 {
         margin: 0 0 12px;
@@ -175,7 +176,7 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
         color: white;
         font-size: 22px;
         margin-bottom: 16px;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
       .recommendations {
         display: flex;
@@ -187,12 +188,12 @@ import { MaintenanceAnalysis } from '../../core/models/vehicle.model';
         border: none;
         border-radius: 16px;
         padding: 24px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
       }
       .recommendation-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
       }
       .rec-header {
         display: flex;
